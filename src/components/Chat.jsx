@@ -17,7 +17,7 @@ function Chat() {
     setMessages([...messages, userMessage]);
 
     try {
-      const response = await axios.post('http://localhost:3001/api/chat', { input });
+      const response = await axios.post('https://krusty-krabs.onrender.com/api/chat', { input });
       const botMessage = { id: Date.now() + 1, role: 'bot', content: response.data.message };
 
       setMessages((prevMessages) => [...prevMessages, botMessage]);
